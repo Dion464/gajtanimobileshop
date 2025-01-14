@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function Navigation() {
   const [hoveredLink, setHoveredLink] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-[#ff0000]/10">
@@ -45,6 +46,13 @@ export default function Navigation() {
             ))}
           </div>
 
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden w-10 h-10 bg-[#ff0000] text-white rounded-full flex items-center justify-center"
+          >
+            ☰
+          </button>
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -54,6 +62,26 @@ export default function Navigation() {
           </motion.button>
         </div>
       </div>
+
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-[#ff0000]/10">
+          {[
+            ["BALLINA", "/"],
+            ["PRODUKTET", "/produktet"],
+            ["RRETH NESH", "/rreth-nesh"],
+            ["KONTAKTI", "/kontakt"],
+          ].map(([name, url]) => (
+            <Link
+              key={name}
+              href={url}
+              onClick={() => setIsOpen(false)}
+              className="block px-8 py-4 text-sm tracking-widest text-[#333333] hover:text-[#ff0000] hover:bg-gray-50 transition-colors"
+            >
+              {name}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

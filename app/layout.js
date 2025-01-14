@@ -14,14 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Gajtani Mobileshop - Teknologjia e Së Ardhmes",
-  description:
-    "Dyqani juaj i besuar i teknologjisë në Prishtinë që nga viti 2000",
+  title: "Gajtani Mobile",
+  description: "Your trusted mobile shop in Prishtina",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="sq">
+    <html lang="en">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

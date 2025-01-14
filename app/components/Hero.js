@@ -22,10 +22,10 @@ export default function Hero() {
           className="max-w-2xl"
         >
           <h1 className="text-7xl font-bold text-white mb-6">
-            GAJTANI<span className="text-[#ff0000]"> MOBILESHOP</span>
+            GAJTANI<span className="text-[#ff0000]"></span>
           </h1>
           <p className="text-xl text-white/80 mb-8">
-            Zbuloni koleksionin tonë të produkteve më të fundit teknologjike dhe
+            Zbuloni koleksionin ton të produkteve të fundit teknologjike dhe
             shërbimeve profesionale.
           </p>
           <motion.button

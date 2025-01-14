@@ -90,8 +90,15 @@ export default function Contact() {
               <h3 className="text-xl font-bold text-[#333333] mb-4 tracking-wide">
                 KONTAKTI
               </h3>
-              <p className="text-[#808080]">Tel: +383 44 123 456</p>
-              <p className="text-[#808080]">Email: info@gajtani.com</p>
+              <div className="space-y-2">
+                <p className="text-[#808080] hover:text-[#ff0000] transition-colors">
+                  <a href="tel:044131000">Tel: 044 131 000</a>
+                </p>
+                <p className="text-[#808080] hover:text-[#ff0000] transition-colors">
+                  <a href="tel:044684007">Tel: 044 684 007</a>
+                </p>
+                <p className="text-[#808080]">Email: info@gajtani.com</p>
+              </div>
             </div>
 
             {/* Working Hours */}

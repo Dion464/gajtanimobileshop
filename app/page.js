@@ -27,8 +27,6 @@ export default function Home() {
 
         <Services />
 
-        <FeaturedProducts />
-
         <Testimonials />
 
         {/* Features Section */}

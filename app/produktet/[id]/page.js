@@ -1,161 +1,293 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { use } from 'react';
-import Link from 'next/link';
-import { FaPhone, FaArrowLeft } from 'react-icons/fa';
+import { use } from "react";
+import Link from "next/link";
+import { FaPhone, FaArrowLeft } from "react-icons/fa";
 
 const productDetails = {
-  macbook: {
-    name: "MacBook Air M2",
-    category: "LAPTOP I FUQISHËM",
-    description: "I fuqishëm dhe i lehtë",
-    image: "/MacBookAirM2.avif",
-    specs: [
-      { label: "Procesori", value: "M2 Chip" },
-      { label: "Memoria", value: "8GB Unified Memory" },
-      { label: "Ekrani", value: "13.6-inch Liquid Retina" },
-      { label: "Bateria", value: "Deri në 18 orë" }
-    ],
-    features: [
-      "Dizajn i Hollë dhe i Lehtë",
-      "Performancë e Jashtëzakonshme",
-      "Ekran Brilliant",
-      "Magic Keyboard"
-    ]
-  },
-  iphone15pro: {
+  iphone15promax: {
     name: "iPhone 15 Pro Max",
-    category: "TELEFONI KRYESUES",
-    description: "iPhone-i më i fuqishëm ndonjëherë",
-    image: "/iphone15promax.avif",
+    category: "TELEFON PREMIUM",
+    description: "Telefoni më i ri nga Apple me kamerë të përmirësuar",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg",
     specs: [
       { label: "Procesori", value: "A17 Pro Chip" },
       { label: "Kamera", value: "48MP Kamera Kryesore" },
       { label: "Ekrani", value: '6.7" Super Retina XDR' },
-      { label: "Materiali", value: "Dizajn Titanium" }
+      { label: "Materiali", value: "Dizajn Titanium" },
     ],
     features: [
       "Sistem i Avancuar i Kamerës",
-      "Bateria Gjatë Gjithë Ditës",
-      "Teknologjia ProMotion",
-      "Ceramic Shield"
-    ]
+      "USB-C Port",
+      "Dynamic Island",
+      "Action Button",
+    ],
   },
-  iphone: {
-    name: "iPhone 15",
-    category: "TELEFON APPLE",
-    description: "Një mënyrë magjike për të përjetuar iPhone",
-    image: "/iphone.avif",
+  iphone15pro: {
+    name: "iPhone 15 Pro",
+    category: "TELEFON PREMIUM",
+    description: "Teknologji e avancuar me çip A17 Pro",
+    image: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-1.jpg",
+    specs: [
+      { label: "Procesori", value: "A17 Pro" },
+      { label: "Kamera", value: "48MP Triple Camera" },
+      { label: "Ekrani", value: '6.1" Super Retina XDR' },
+      { label: "Materiali", value: "Titanium Frame" },
+    ],
+    features: [
+      "ProMotion Display",
+      "Always-On Display",
+      "Action Button",
+      "USB-C Port",
+    ],
+  },
+  iphone15plus: {
+    name: "iPhone 15 Plus",
+    category: "TELEFON FLAGSHIP",
+    description: "Ekran 6.7 inch me Dynamic Island",
+    image: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-plus-1.jpg",
     specs: [
       { label: "Procesori", value: "A16 Bionic" },
-      { label: "Kamera", value: "Sistem 48MP" },
-      { label: "Ekrani", value: "Super Retina XDR" },
-      { label: "Dizajni", value: "Ceramic Shield" }
+      { label: "Kamera", value: "48MP Dual Camera" },
+      { label: "Ekrani", value: '6.7" Super Retina XDR' },
+      { label: "Bateria", value: "4383 mAh" },
     ],
     features: [
       "Dynamic Island",
-      "Bateria Gjatë Gjithë Ditës",
-      "Kamera e Avancuar",
-      "5G Capable"
-    ]
+      "USB-C Port",
+      "Emergency SOS",
+      "Ceramic Shield",
+    ],
   },
-  iphoneangle: {
-    name: "iPhone 15 Pro",
-    category: "TELEFONI KRYESUES",
-    description: "Shot on iPhone në nivelin tjetër",
-    image: "/iphonefrom anotherangele.avif",
+  s24ultra: {
+    name: "Samsung Galaxy S24 Ultra",
+    category: "TELEFON PREMIUM",
+    description: "Përvojë e re me AI dhe kamera 200MP",
+    image:
+      "https://images.samsung.com/is/image/samsung/p6pim/levant/2401/gallery/levant-galaxy-s24-ultra-s928-sm-s928bzgcmea-thumb-537240069",
     specs: [
-      { label: "Dizajni", value: "Titanium" },
-      { label: "Kamera", value: "Sistem Pro" },
-      { label: "Çipi", value: "A17 Pro" },
-      { label: "Ekrani", value: "ProMotion" }
+      { label: "Procesori", value: "Snapdragon 8 Gen 3" },
+      { label: "Kamera", value: "200MP Quad Camera" },
+      { label: "Ekrani", value: '6.8" Dynamic AMOLED 2X' },
+      { label: "S Pen", value: "Built-in" },
     ],
     features: [
-      "Veçori Pro të Kamerës",
-      "Butoni Action",
-      "USB-C",
-      "Dizajn Titanium"
-    ]
+      "AI Features",
+      "Titanium Frame",
+      "Ray Tracing",
+      "45W Fast Charging",
+    ],
+  },
+  macbookpro16: {
+    name: "MacBook Pro 16",
+    category: "LAPTOP",
+    description: "Laptop profesional me çip M3 Max",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-pro-14-16-m3-2023-1.jpg",
+    specs: [
+      { label: "Procesori", value: "Apple M3 Max" },
+      { label: "RAM", value: "Up to 128GB Unified" },
+      { label: "Ekrani", value: '16.2" Liquid Retina XDR' },
+      { label: "Storage", value: "Up to 8TB SSD" },
+    ],
+    features: [
+      "ProMotion Technology",
+      "Mini-LED Display",
+      "Magic Keyboard",
+      "Studio Quality Mics",
+    ],
   },
   ipadpro: {
-    name: "iPad Pro",
-    category: "TABLET PROFESIONAL",
-    description: "Kompjuteri juaj i ardhshëm nuk është kompjuter",
-    image: "/iPad Pro.avif",
+    name: "iPad Pro 12.9",
+    category: "TABLET",
+    description: "Tableti profesional me çip M2",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-pro-129-2022-1.jpg",
     specs: [
-      { label: "Çipi", value: "M2" },
-      { label: "Ekrani", value: "Liquid Retina XDR" },
-      { label: "Kamera", value: "12MP Ultra Wide" },
-      { label: "Lidhja", value: "5G" }
+      { label: "Procesori", value: "Apple M2" },
+      { label: "Ekrani", value: '12.9" Mini-LED' },
+      { label: "Kamera", value: "12MP Wide + 10MP Ultra-wide" },
+      { label: "Storage", value: "Up to 2TB" },
     ],
     features: [
-      "Apple Pencil Hover",
-      "Center Stage",
-      "Thunderbolt / USB 4",
-      "Face ID"
-    ]
+      "Apple Pencil 2 Support",
+      "Face ID",
+      "Thunderbolt Port",
+      "ProMotion 120Hz",
+    ],
   },
-  applewatch: {
-    name: "Apple Watch Series 9",
-    category: "ORË INTELIGJENTE",
-    description: "Monitorimi i avancuar i shëndetit",
-    image: "/applewatch.avif",
+  s24plus: {
+    name: "Samsung Galaxy S24+",
+    category: "TELEFON FLAGSHIP",
+    description: "Performancë e lartë me ekran Dynamic AMOLED",
+    image:
+      "https://images.samsung.com/is/image/samsung/p6pim/levant/2401/gallery/levant-galaxy-s24-plus-s926-sm-s926bzageue-thumb-537239831",
     specs: [
-      { label: "Ekrani", value: "Always-On Retina" },
-      { label: "Shëndeti", value: "Sensorë të Avancuar" },
-      { label: "Çipi", value: "S9 SiP" },
-      { label: "Bateria", value: "18-orë" }
+      { label: "Procesori", value: "Snapdragon 8 Gen 3" },
+      { label: "Kamera", value: "50MP Triple Camera" },
+      { label: "Ekrani", value: '6.7" Dynamic AMOLED 2X' },
+      { label: "Bateria", value: "4900 mAh" },
     ],
     features: [
-      "Monitorimi i Shëndetit",
-      "Ekran Always-On",
-      "Rezistent ndaj Ujit",
-      "Double Tap Gesture"
-    ]
-  },
-  applewatchultra: {
-    name: "Apple Watch Ultra 2",
-    category: "ORË PREMIUM",
-    description: "Ora më e fuqishme dhe e aftë Apple",
-    image: "/applewatchultra2.avif",
-    specs: [
-      { label: "Madhësia", value: "49mm Titanium" },
-      { label: "Ekrani", value: "Always-On Retina" },
-      { label: "Bateria", value: "36-orë" },
-      { label: "Rezistenca ndaj Ujit", value: "100m" }
+      "AI Features",
+      "45W Fast Charging",
+      "Galaxy AI",
+      "Vision Booster",
     ],
-    features: [
-      "Kasa Titanium",
-      "Butoni Action",
-      "GPS Dual-Frequency",
-      "Butoni Action i Personalizueshëm"
-    ]
   },
-  galaxyfold: {
+  zfold5: {
     name: "Samsung Galaxy Z Fold 5",
-    category: "TELEFON I PALOSSHËM",
-    description: "Shpalosni botën tuaj",
-    image: "/SamsungGalaxyZFold5.avif",
+    category: "TELEFON PREMIUM",
+    description: "Telefoni palosshëm më i avancuar",
+    image:
+      "https://images.samsung.com/is/image/samsung/p6pim/levant/sm-f946blbhmea/gallery/levant-galaxy-z-fold5-f946-sm-f946blbhmea-thumb-537241141",
     specs: [
-      { label: "Ekrani", value: '7.6" Ekrani Kryesor' },
       { label: "Procesori", value: "Snapdragon 8 Gen 2" },
-      { label: "Kamera", value: "50MP Kamera Kryesore" },
-      { label: "Bateria", value: "4400mAh" }
+      { label: "Ekrani", value: '7.6" Main + 6.2" Cover' },
+      { label: "Kamera", value: "50MP Triple Camera" },
+      { label: "RAM", value: "12GB" },
     ],
     features: [
       "Flex Mode",
-      "S Pen Compatible",
-      "IPX8 Rezistent ndaj Ujit",
-      "Multi-Active Window"
-    ]
-  }
+      "S Pen Support",
+      "IPX8 Water Resistant",
+      "Wireless DeX",
+    ],
+  },
+  tabs9ultra: {
+    name: "Samsung Galaxy Tab S9 Ultra",
+    category: "TABLET",
+    description: "Tableti më i fuqishëm nga Samsung",
+    image:
+      "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-tab-s9-ultra.jpg",
+    specs: [
+      { label: "Procesori", value: "Snapdragon 8 Gen 2" },
+      { label: "Ekrani", value: '14.6" Dynamic AMOLED 2X' },
+      { label: "Bateria", value: "11200 mAh" },
+      { label: "S Pen", value: "Included" },
+    ],
+    features: [
+      "IP68 Water Resistant",
+      "DeX Mode",
+      "Quad Speakers",
+      "45W Fast Charging",
+    ],
+  },
+  bookpro: {
+    name: "Samsung Galaxy Book3 Pro",
+    category: "LAPTOP",
+    description: "Laptop i hollë me ekran AMOLED",
+    image:
+      "https://images.samsung.com/is/image/samsung/p6pim/uk/np940xfg-kb1uk/gallery/uk-galaxy-book3-pro-np940-np940xfg-kb1uk-534606737",
+    specs: [
+      { label: "Procesori", value: "13th Gen Intel Core" },
+      { label: "Ekrani", value: '16" Dynamic AMOLED 2X' },
+      { label: "RAM", value: "Up to 32GB" },
+      { label: "Storage", value: "Up to 1TB SSD" },
+    ],
+    features: [
+      "120Hz Display",
+      "AKG Speakers",
+      "Galaxy Ecosystem",
+      "Thunderbolt 4",
+    ],
+  },
+  xiaomi14pro: {
+    name: "Xiaomi 14 Pro",
+    category: "TELEFON PREMIUM",
+    description: "Teknologjia më e fundit e inovacionit",
+    image: "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-pro-2.jpg",
+    specs: [
+      { label: "Procesori", value: "Snapdragon 8 Gen 3" },
+      { label: "Kamera", value: "50MP Leica Optics" },
+      { label: "Ekrani", value: '6.73" LTPO AMOLED' },
+      { label: "Bateria", value: "4880 mAh" },
+    ],
+    features: [
+      "120W HyperCharge",
+      "Leica Cameras",
+      "Titanium Frame",
+      "Dolby Vision",
+    ],
+  },
+  xiaomi14: {
+    name: "Xiaomi 14",
+    category: "TELEFON FLAGSHIP",
+    description: "Kamera Leica me performancë të lartë",
+    image: "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg",
+    specs: [
+      { label: "Procesori", value: "Snapdragon 8 Gen 3" },
+      { label: "Kamera", value: "50MP Leica System" },
+      { label: "Ekrani", value: '6.36" AMOLED' },
+      { label: "Bateria", value: "4610 mAh" },
+    ],
+    features: ["90W Charging", "Leica Optics", "HyperOS", "Dolby Atmos"],
+  },
+  redminote13pro: {
+    name: "Redmi Note 13 Pro+",
+    category: "TELEFON MESATAR",
+    description: "Kamera 200MP dhe ekran AMOLED 120Hz",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-pro-plus-1.jpg",
+    specs: [
+      { label: "Procesori", value: "Dimensity 7200-Ultra" },
+      { label: "Kamera", value: "200MP Main Camera" },
+      { label: "Ekrani", value: '6.67" AMOLED 120Hz' },
+      { label: "Bateria", value: "5000 mAh" },
+    ],
+    features: [
+      "120W HyperCharge",
+      "IP68 Rating",
+      "1.5K Resolution",
+      "Dolby Vision",
+    ],
+  },
+  redmipad: {
+    name: "Redmi Pad SE",
+    category: "TABLET",
+    description: "Tablet i përballueshëm me performancë të mirë",
+    image: "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-pad-se.jpg",
+    specs: [
+      { label: "Procesori", value: "Snapdragon 680" },
+      { label: "Ekrani", value: '11" LCD 90Hz' },
+      { label: "Bateria", value: "8000 mAh" },
+      { label: "Storage", value: "Up to 128GB" },
+    ],
+    features: [
+      "Quad Speakers",
+      "Reading Mode",
+      "MicroSD Support",
+      "MIUI Pad 14",
+    ],
+  },
+  xiaomipad: {
+    name: "Xiaomi Pad 6 Pro",
+    category: "TABLET",
+    description: "Tablet premium me Snapdragon 8+",
+    image: "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-pad-6-pro.jpg",
+    specs: [
+      { label: "Procesori", value: "Snapdragon 8+ Gen 1" },
+      { label: "Ekrani", value: '11" 144Hz LCD' },
+      { label: "RAM", value: "Up to 12GB" },
+      { label: "Bateria", value: "8600 mAh" },
+    ],
+    features: [
+      "67W Fast Charging",
+      "Dolby Vision",
+      "Quad Speakers",
+      "Stylus Support",
+    ],
+  },
 };
 
 const contactNumbers = [
   { number: "044 131 000", label: "Kontakt 1" },
-  { number: "044 684 007", label: "Kontakt 2" }
+  { number: "044 684 007", label: "Kontakt 2" },
 ];
+
+const isExternalImage = (src) => src.startsWith("http");
 
 export default function ProductDetail({ params }) {
   const unwrappedParams = use(params);
@@ -195,14 +327,24 @@ export default function ProductDetail({ params }) {
           >
             <div className="relative w-full aspect-square bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
               {product.image && (
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-contain p-8 transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority
-                />
+                <div className="relative w-full aspect-square bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                  {isExternalImage(product.image) ? (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority
+                    />
+                  )}
+                </div>
               )}
             </div>
           </motion.div>
@@ -225,9 +367,7 @@ export default function ProductDetail({ params }) {
 
             {/* Specifications */}
             <div className="space-y-4">
-              <h2 className="text-xl font-bold text-[#333333]">
-                SPECIFIKIMET
-              </h2>
+              <h2 className="text-xl font-bold text-[#333333]">SPECIFIKIMET</h2>
               <div className="grid grid-cols-2 gap-4">
                 {product.specs.map((spec) => (
                   <div key={spec.label} className="bg-white p-4 rounded-xl">
@@ -242,7 +382,9 @@ export default function ProductDetail({ params }) {
 
             {/* Features */}
             <div className="space-y-4">
-              <h2 className="text-xl font-bold text-[#333333]">VEÇORITË KRYESORE</h2>
+              <h2 className="text-xl font-bold text-[#333333]">
+                VEÇORITË KRYESORE
+              </h2>
               <div className="space-y-2">
                 {product.features.map((feature) => (
                   <div key={feature} className="flex items-center space-x-2">
@@ -258,7 +400,7 @@ export default function ProductDetail({ params }) {
               {contactNumbers.map((contact, index) => (
                 <motion.a
                   key={contact.number}
-                  href={`tel:${contact.number.replace(/\s/g, '')}`}
+                  href={`tel:${contact.number.replace(/\s/g, "")}`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="flex items-center justify-center gap-3 w-full bg-[#333333] text-white py-4 rounded-xl hover:bg-[#ff0000] transition-all duration-300"

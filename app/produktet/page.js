@@ -6,6 +6,13 @@ import Link from "next/link";
 const products = [
   // Apple Products
   {
+    id: "iphone16promax",
+    name: "iPhone 16 Pro Max",
+    category: "TELEFON PREMIUM",
+    description: "Telefoni më i ri nga Apple me kamerë të përmirësuar",
+    image:"/iphone16promax.jpeg",
+  },
+  {
     id: "iphone15promax",
     name: "iPhone 15 Pro Max",
     category: "TELEFON PREMIUM",
@@ -46,7 +53,27 @@ const products = [
     image:
       "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-tab-s9-ultra.jpg",
   },
-
+  {
+    id: "samsungs24ultra",
+    name: "samsung Galaxy S24 Ultra",
+    category: "TELEFON PREMIUM",
+    description: "Telefoni më i ri nga Apple me kamerë të përmirësuar",
+    image:"/samsung.jpeg",
+  },
+  {
+    id: "Samsung Galaxy A25 5G. Best overall.",
+    name: "Samsung Galaxy A25 5G.",
+    category: "TELEFON PREMIUM",
+    description: "Telefoni më i ri nga Apple me kamerë të përmirësuar",
+    image:"/samsung2.jpeg",
+  },
+  {
+    id: "samsungzflip",
+    name: "samsung GAlaxy Z flip .",
+    category: "TELEFON PREMIUM",
+    description: "Telefoni më i avancuar ne anen fizike ",
+    image:"/zflip.jpeg",
+  },
   // Xiaomi Products
   {
     id: "xiaomi14pro",

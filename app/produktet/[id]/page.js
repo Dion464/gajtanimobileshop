@@ -6,6 +6,25 @@ import Link from "next/link";
 import { FaPhone, FaArrowLeft } from "react-icons/fa";
 
 const productDetails = {
+  iphone16promax: {
+    name: "iPhone 16 Pro Max",
+    category: "TELEFON PREMIUM",
+    description: "Telefoni më i ri nga Apple me kamerë të përmirësuar",
+    image:
+      "/iphone16promax.jpeg",
+    specs: [
+      { label: "Procesori", value: "A17 Pro Chip" },
+      { label: "Kamera", value: "48MP Kamera Kryesore" },
+      { label: "Ekrani", value: '6.7" Super Retina XDR' },
+      { label: "Materiali", value: "Dizajn Titanium" },
+    ],
+    features: [
+      "Sistem i Avancuar i Kamerës",
+      "USB-C Port",
+      "Dynamic Island",
+      "Action Button",
+    ],
+  },
   iphone15promax: {
     name: "iPhone 15 Pro Max",
     category: "TELEFON PREMIUM",
@@ -61,7 +80,7 @@ const productDetails = {
       "Ceramic Shield",
     ],
   },
-  s24ultra: {
+  samsungs24ultra: {
     name: "Samsung Galaxy S24 Ultra",
     category: "TELEFON PREMIUM",
     description: "Përvojë e re me AI dhe kamera 200MP",
@@ -137,7 +156,7 @@ const productDetails = {
       "Vision Booster",
     ],
   },
-  zfold5: {
+  samsungzflip: {
     name: "Samsung Galaxy Z Fold 5",
     category: "TELEFON PREMIUM",
     description: "Telefoni palosshëm më i avancuar",

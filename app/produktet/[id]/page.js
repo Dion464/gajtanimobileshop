@@ -83,19 +83,18 @@ const productDetails = {
   samsungs24ultra: {
     name: "Samsung Galaxy S24 Ultra",
     category: "TELEFON PREMIUM",
-    description: "Përvojë e re me AI dhe kamera 200MP",
-    image:
-      "https://images.samsung.com/is/image/samsung/p6pim/levant/2401/gallery/levant-galaxy-s24-ultra-s928-sm-s928bzgcmea-thumb-537240069",
+    description: "Telefoni më i avancuar nga Samsung me Galaxy AI",
+    image: "/samsung.jpeg",
     specs: [
       { label: "Procesori", value: "Snapdragon 8 Gen 3" },
-      { label: "Kamera", value: "200MP Quad Camera" },
-      { label: "Ekrani", value: '6.8" Dynamic AMOLED 2X' },
-      { label: "S Pen", value: "Built-in" },
+      { label: "Kamera", value: "200MP + 50MP + 12MP + 10MP" },
+      { label: "Ekrani", value: '6.8" QHD+ Dynamic AMOLED 2X' },
+      { label: "Bateria", value: "5000 mAh" },
     ],
     features: [
-      "AI Features",
-      "Titanium Frame",
-      "Ray Tracing",
+      "S Pen i Integruar",
+      "Galaxy AI Features",
+      "Kornizë Titanium",
       "45W Fast Charging",
     ],
   },
@@ -157,41 +156,39 @@ const productDetails = {
     ],
   },
   samsungzflip: {
-    name: "Samsung Galaxy Z Fold 5",
+    name: "Samsung Galaxy Z Flip 5",
     category: "TELEFON PREMIUM",
-    description: "Telefoni palosshëm më i avancuar",
-    image:
-      "https://images.samsung.com/is/image/samsung/p6pim/levant/sm-f946blbhmea/gallery/levant-galaxy-z-fold5-f946-sm-f946blbhmea-thumb-537241141",
+    description: "Telefoni palosshëm me ekran të jashtëm 3.4 inch",
+    image: "/zflip.jpeg",
     specs: [
       { label: "Procesori", value: "Snapdragon 8 Gen 2" },
-      { label: "Ekrani", value: '7.6" Main + 6.2" Cover' },
-      { label: "Kamera", value: "50MP Triple Camera" },
-      { label: "RAM", value: "12GB" },
+      { label: "Kamera", value: "12MP + 12MP Ultra Wide" },
+      { label: "Ekrani", value: '6.7" Dynamic AMOLED 2X' },
+      { label: "Ekrani i Jashtëm", value: '3.4" Super AMOLED' },
     ],
     features: [
       "Flex Mode",
-      "S Pen Support",
       "IPX8 Water Resistant",
-      "Wireless DeX",
+      "Wireless Charging",
+      "Flex Window",
     ],
   },
   tabs9ultra: {
     name: "Samsung Galaxy Tab S9 Ultra",
     category: "TABLET",
-    description: "Tableti më i fuqishëm nga Samsung",
-    image:
-      "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-tab-s9-ultra.jpg",
+    description: "Tableti më i fuqishëm nga Samsung me S Pen",
+    image: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-tab-s9-ultra.jpg",
     specs: [
       { label: "Procesori", value: "Snapdragon 8 Gen 2" },
-      { label: "Ekrani", value: '14.6" Dynamic AMOLED 2X' },
-      { label: "Bateria", value: "11200 mAh" },
-      { label: "S Pen", value: "Included" },
+      { label: "Ekrani", value: '14.6" Dynamic AMOLED 2X 120Hz' },
+      { label: "RAM", value: "12GB / 16GB" },
+      { label: "Storage", value: "256GB / 512GB / 1TB" },
     ],
     features: [
+      "S Pen i Përfshirë",
       "IP68 Water Resistant",
-      "DeX Mode",
-      "Quad Speakers",
-      "45W Fast Charging",
+      "Samsung DeX",
+      "Quad Speakers by AKG",
     ],
   },
   bookpro: {
@@ -299,6 +296,24 @@ const productDetails = {
       "Stylus Support",
     ],
   },
+  "Samsung Galaxy A25 5G. Best overall.": {
+    name: "Samsung Galaxy A25 5G",
+    category: "TELEFON MESATAR",
+    description: "Telefon i balancuar me performancë të shkëlqyer",
+    image: "/samsung2.jpeg",
+    specs: [
+      { label: "Procesori", value: "Exynos 1280" },
+      { label: "Kamera", value: "50MP + 8MP + 2MP" },
+      { label: "Ekrani", value: '6.5" Super AMOLED 120Hz' },
+      { label: "Bateria", value: "5000 mAh" },
+    ],
+    features: [
+      "5G Connectivity",
+      "25W Fast Charging",
+      "One UI 6.0",
+      "microSD support",
+    ],
+  },
 };
 
 const contactNumbers = [
@@ -344,9 +359,9 @@ export default function ProductDetail({ params }) {
             animate={{ opacity: 1, x: 0 }}
             className="group"
           >
-            <div className="relative w-full aspect-square bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+            <div className="relative w-full h-[500px] bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
               {product.image && (
-                <div className="relative w-full aspect-square bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div className="relative w-full h-full">
                   {isExternalImage(product.image) ? (
                     <img
                       src={product.image}
@@ -354,14 +369,16 @@ export default function ProductDetail({ params }) {
                       className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-contain p-8 transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority
+                      />
+                    </div>
                   )}
                 </div>
               )}
